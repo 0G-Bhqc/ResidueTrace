@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "residuetrace"
+version = "0.1.0"
+description = "Offline cross-checks for externally declared residue identifiers in static evidence"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "0BSD"
+license-files = ["LICENSE"]
+dependencies = ["gemmi>=0.7,<0.8", "Pillow>=10,<13"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+residuetrace = "residuetrace.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
+
+[tool.setuptools.package-data]
+residuetrace = ["demo/*.cif", "demo/*.png", "demo/*.csv", "demo/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "benchmark"]

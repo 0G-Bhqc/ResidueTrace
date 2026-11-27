@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "description": "Original synthetic identifier exercise. Not a 3B9F record, experimental measurement, or molecular depiction.",
+  "structure": {
+    "path": "teaching.cif",
+    "sha256": "9c5509df5a74ced993b8237fcceaf90b5a2e9d694d87b08455751b8a4eae28b5"
+  },
+  "figure": {
+    "path": "tiles.png",
+    "sha256": "573acd2367d29b0a19b1d66b6d1c8d319989360ef303d5084a13fcf373060381"
+  },
+  "table": {
+    "path": "claims.csv",
+    "sha256": "dd8318c8a821db18c4c9abcd8001ad41e5c616d701fac3ba2e9d48b8887705e5"
+  },
+  "regions": [
+    {
+      "id": "r1",
+      "rect": [
+        12,
+        16,
+        40,
+        24
+      ],
+      "row_key": "k1",
+      "claim": {
+        "model": 1,
+        "auth_asym_id": "H",
+        "auth_seq_id": "77",
+        "ins_code": "A"
+      }
+    },
+    {
+      "id": "r2",
+      "rect": [
+        12,
+        60,
+        40,
+        24
+      ],
+      "row_key": "k2",
+      "claim": {
+        "model": 1,
+        "auth_asym_id": "H",
+        "auth_seq_id": "77",
+        "ins_code": ""
+      }
+    }
+  ]
+}

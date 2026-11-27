@@ -1,0 +1,5 @@
+# These fixture bytes are pinned in the bundled manifest, even on Windows.
+src/residuetrace/demo/*.csv text eol=lf
+src/residuetrace/demo/*.cif text eol=lf
+src/residuetrace/demo/*.png binary
+benchmark/data/*.cif text eol=lf

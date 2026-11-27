@@ -1,0 +1,31 @@
+data_1CRN_excerpt
+loop_
+_entity.id
+_entity.type
+1 polymer
+
+loop_
+_atom_site.group_PDB
+_atom_site.id
+_atom_site.type_symbol
+_atom_site.label_atom_id
+_atom_site.label_alt_id
+_atom_site.label_comp_id
+_atom_site.label_asym_id
+_atom_site.label_entity_id
+_atom_site.label_seq_id
+_atom_site.pdbx_PDB_ins_code
+_atom_site.Cartn_x
+_atom_site.Cartn_y
+_atom_site.Cartn_z
+_atom_site.occupancy
+_atom_site.B_iso_or_equiv
+_atom_site.pdbx_formal_charge
+_atom_site.auth_seq_id
+_atom_site.auth_comp_id
+_atom_site.auth_asym_id
+_atom_site.auth_atom_id
+_atom_site.pdbx_PDB_model_num
+ATOM 41 C CA . ILE A 1 7 ? 8.912 2.083 13.258 1.00 6.33 ? 7 ILE A CA 1
+ATOM 49 C CA . VAL A 1 8 ? 5.145 2.209 12.453 1.00 6.93 ? 8 VAL A CA 1
+ATOM 56 C CA . ALA A 1 9 ? 5.598 5.767 11.082 1.00 3.56 ? 9 ALA A CA 1
