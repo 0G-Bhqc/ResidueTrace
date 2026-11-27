@@ -1,7 +1,10 @@
 """Model-scoped identifier crosswalk from observed polymer atom sites only."""
 
+import gzip
+import io
 import math
 import re
+import zlib
 from collections import defaultdict
 from dataclasses import asdict, dataclass
 
@@ -92,8 +95,19 @@ class Crosswalk:
         return result
 
 
+MAX_EXPANDED_CIF_BYTES = 256 * 1024 * 1024
+
+
 def read_crosswalk(data):
     index = Crosswalk()
+    if data.startswith(b"\x1f\x8b"):
+        try:
+            with gzip.GzipFile(fileobj=io.BytesIO(data), mode="rb") as archive:
+                data = archive.read(MAX_EXPANDED_CIF_BYTES + 1)
+        except (EOFError, OSError, zlib.error) as exc:
+            raise AuditError("structure: invalid or incomplete gzip archive") from exc
+        if len(data) > MAX_EXPANDED_CIF_BYTES:
+            raise AuditError("structure: expanded mmCIF exceeds the size limit")
     try:
         document = gemmi.cif.read_string(data)
         if len(document) != 1:

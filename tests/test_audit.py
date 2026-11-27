@@ -1,3 +1,5 @@
+import gzip
+import hashlib
 import json
 
 import pytest
@@ -22,6 +24,40 @@ def test_synthetic_crosswalk_and_provenance(bundle):
     assert report['rows'][0]['fields']['row_key'] == 'k1'
     assert report['rows'][0]['resolution']['candidates'] == [c]
     assert all(f['sha256'] == f['actual_sha256'] for f in report['files'].values())
+
+
+def archive_structure(bundle, data):
+    bundle.manifest['structure']['path'] = 'archive.cif.gz'
+    bundle.file('structure').write_bytes(data)
+    bundle.manifest['structure']['sha256'] = hashlib.sha256(data).hexdigest()
+
+
+def test_gzip_archive_preserves_evidence_and_pins_archive_bytes(bundle):
+    before = bundle.run()
+    plain = bundle.file('structure').read_bytes()
+    archive_structure(bundle, gzip.compress(plain, mtime=0))
+    after = bundle.run()
+    assert after['ok'] and after['regions'] == before['regions'] and after['rows'] == before['rows']
+    assert after['files']['structure']['actual_sha256'] != before['files']['structure']['actual_sha256']
+    bundle.manifest['structure']['sha256'] = before['files']['structure']['sha256']
+    rejected(bundle.run(), 'hash_mismatch')
+
+
+def test_truncated_gzip_does_not_yield_partial_evidence(bundle):
+    archive_structure(bundle, gzip.compress(bundle.file('structure').read_bytes(), mtime=0)[:-4])
+    with pytest.raises(AuditError, match='incomplete gzip'):
+        bundle.run()
+
+
+def test_gzip_expanded_size_boundary(bundle, monkeypatch):
+    from residuetrace import structure
+    plain = bundle.file('structure').read_bytes()
+    archive_structure(bundle, gzip.compress(plain, mtime=0))
+    monkeypatch.setattr(structure, 'MAX_EXPANDED_CIF_BYTES', len(plain))
+    assert bundle.run()['ok']
+    monkeypatch.setattr(structure, 'MAX_EXPANDED_CIF_BYTES', len(plain) - 1)
+    with pytest.raises(AuditError, match='size limit'):
+        bundle.run()
 
 
 @pytest.mark.parametrize('edit', [{'ins_code': ''}, {'model': 2}])
