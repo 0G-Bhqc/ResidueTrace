@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="640" viewBox="0 0 1000 640" role="img" aria-labelledby="fig-title fig-desc">
+  <title id="fig-title">ResidueTrace crosswalk check on PDB 3B9F, model 1</title>
+  <desc id="fig-desc">The author identifier H:77 with insertion code A and label B:73 both resolve to ARG (atom IDs 1035 and 1036). Label B:74 resolves to H:78, ASN (atom IDs 1057 and 1058), so the constructed pairing conflicts.</desc>
+  <style>
+    text { font-family: -apple-system, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; }
+    .bg { fill: #ffffff; }
+    .panel { fill: #f6f8fa; stroke: #d1d9e0; stroke-width: 1; }
+    .lane-ok { stroke: #1a7f37; stroke-width: 1.6; }
+    .lane-warn { stroke: #9a6700; stroke-width: 1.6; }
+    .t1 { fill: #1f2328; }
+    .t2 { fill: #59636e; }
+    .auth { fill: #0969da; }
+    .lbl { fill: #8250df; }
+    .ok { fill: #1a7f37; }
+    .warn { fill: #9a6700; }
+    .okbg { fill: #1a7f37; fill-opacity: 0.13; stroke: #1a7f37; }
+    .warnbg { fill: #9a6700; fill-opacity: 0.15; stroke: #9a6700; }
+    .stB { stroke: #0969da; stroke-width: 2; }
+    .stP { stroke: #8250df; stroke-width: 2; }
+    .stW { stroke: #9a6700; stroke-width: 2; }
+    .ln2 { stroke: #59636e; stroke-width: 1.6; }
+    .hdB { fill: #0969da; }
+    .hdP { fill: #8250df; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0d1117; }
+      .panel { fill: #151b23; stroke: #3d444d; }
+      .lane-ok { stroke: #3fb950; }
+      .lane-warn { stroke: #d29922; }
+      .t1 { fill: #f0f6fc; }
+      .t2 { fill: #9198a1; }
+      .auth { fill: #4493f8; }
+      .lbl { fill: #ab7df8; }
+      .ok { fill: #3fb950; }
+      .warn { fill: #d29922; }
+      .okbg { fill: #3fb950; stroke: #3fb950; }
+      .warnbg { fill: #d29922; stroke: #d29922; }
+      .stB { stroke: #4493f8; }
+      .stP { stroke: #ab7df8; }
+      .stW { stroke: #d29922; }
+      .ln2 { stroke: #9198a1; }
+      .hdB { fill: #4493f8; }
+      .hdP { fill: #ab7df8; }
+    }
+  </style>
+
+  <rect class="bg" x="0" y="0" width="1000" height="640" rx="16"/>
+
+  <text x="36" y="48" font-size="26" font-weight="700" class="t1">ResidueTrace crosswalk — PDB 3B9F, model 1</text>
+  <text x="36" y="76" font-size="15" class="t2">Do a figure annotation and a table row name the same observed residue?</text>
+
+  <!-- column headers -->
+  <text x="145" y="110" font-size="12.5" font-weight="700" letter-spacing="1.5" text-anchor="middle" class="t2">FIGURE CLAIM</text>
+  <text x="480" y="110" font-size="12.5" font-weight="700" letter-spacing="1.5" text-anchor="middle" class="t2">ARCHIVE ATOM RECORD</text>
+  <text x="800" y="110" font-size="12.5" font-weight="700" letter-spacing="1.5" text-anchor="middle" class="t2">TABLE ROW</text>
+  <text x="145" y="127" font-size="11" text-anchor="middle" class="t2">auth_*&#160;namespace</text>
+  <text x="480" y="127" font-size="11" text-anchor="middle" class="t2">_atom_site excerpt decides</text>
+  <text x="800" y="127" font-size="11" text-anchor="middle" class="t2">label_*&#160;namespace</text>
+
+  <!-- lane 1 tag -->
+  <text x="40" y="145" font-size="11.5" class="t2">case 1 · consistent pairing</text>
+
+  <!-- lane 1: figure claim box -->
+  <rect class="panel" x="40" y="152" width="210" height="76" rx="10"/>
+  <text x="145" y="172" font-size="11" text-anchor="middle" class="t2">model 1</text>
+  <text x="145" y="198" font-size="19" font-weight="700" text-anchor="middle" class="auth">auth H:77 ins A</text>
+
+  <!-- lane 1: archive card -->
+  <rect class="panel lane-ok" x="300" y="152" width="360" height="76" rx="10"/>
+  <text x="390" y="174" font-size="20" text-anchor="middle"><tspan class="lbl" font-weight="700">B:73</tspan><tspan class="t1" font-weight="700">&#160;ARG</tspan></text>
+  <line class="ln2" x1="456" y1="188" x2="498" y2="188"/>
+  <polygon class="ln2" points="508,188 497,183 497,193"/>
+  <line class="ln2" x1="504" y1="197" x2="462" y2="197"/>
+  <polygon class="ln2" points="452,197 463,192 463,202"/>
+  <text x="570" y="174" font-size="20" font-weight="700" text-anchor="middle" class="auth">H:77 ins A</text>
+  <text x="480" y="200" font-size="11.5" text-anchor="middle" class="t2">atoms 1035–1036 · altlocs A / B</text>
+
+  <!-- lane 1: table row box -->
+  <rect class="panel" x="710" y="152" width="180" height="76" rx="10"/>
+  <text x="800" y="172" font-size="11" text-anchor="middle" class="t2">model 1</text>
+  <text x="800" y="198" font-size="19" font-weight="700" text-anchor="middle" class="lbl">label B:73</text>
+
+  <!-- lane 1 arrows -->
+  <line class="stB" x1="250" y1="190" x2="288" y2="190"/>
+  <polygon class="hdB" points="300,190 288,184 288,196"/>
+  <line class="stP" x1="710" y1="190" x2="672" y2="190"/>
+  <polygon class="hdP" points="660,190 672,184 672,196"/>
+
+  <!-- lane 1 verdict chip -->
+  <rect class="okbg" x="355" y="248" width="250" height="32" rx="16"/>
+  <text x="480" y="269" font-size="13" font-weight="700" text-anchor="middle" class="ok">SAME RESIDUE (verified)</text>
+
+  <!-- lane 2 tag -->
+  <text x="40" y="335" font-size="11.5" class="t2">case 2 · constructed mismatch</text>
+
+  <!-- lane 2: figure claim box (same claim reused) -->
+  <rect class="panel" x="40" y="342" width="210" height="76" rx="10"/>
+  <text x="145" y="362" font-size="11" text-anchor="middle" class="t2">model 1</text>
+  <text x="145" y="388" font-size="19" font-weight="700" text-anchor="middle" class="auth">auth H:77 ins A</text>
+
+  <!-- lane 2: archive card -->
+  <rect class="panel lane-warn" x="300" y="342" width="360" height="76" rx="10"/>
+  <text x="390" y="364" font-size="20" text-anchor="middle"><tspan class="lbl" font-weight="700">B:74</tspan><tspan class="t1" font-weight="700">&#160;ASN</tspan></text>
+  <line class="ln2" x1="456" y1="378" x2="498" y2="378"/>
+  <polygon class="ln2" points="508,378 497,373 497,383"/>
+  <line class="ln2" x1="504" y1="387" x2="462" y2="387"/>
+  <polygon class="ln2" points="452,387 463,382 463,392"/>
+  <text x="570" y="364" font-size="20" font-weight="700" text-anchor="middle" class="auth">H:78</text>
+  <text x="480" y="390" font-size="11.5" text-anchor="middle" class="t2">atoms 1057–1058 · altlocs A / B</text>
+
+  <!-- lane 2: table row box -->
+  <rect class="panel" x="710" y="342" width="180" height="76" rx="10"/>
+  <text x="800" y="362" font-size="11" text-anchor="middle" class="t2">model 1</text>
+  <text x="800" y="388" font-size="19" font-weight="700" text-anchor="middle" class="lbl">label B:74</text>
+
+  <!-- lane 2 arrows: left one is blocked (dashed, no match) -->
+  <line class="stW" x1="250" y1="380" x2="292" y2="380" stroke-dasharray="5 4"/>
+  <line class="stW" x1="265" y1="360" x2="277" y2="372"/>
+  <line class="stW" x1="277" y1="360" x2="265" y2="372"/>
+  <line class="stP" x1="710" y1="380" x2="672" y2="380"/>
+  <polygon class="hdP" points="660,380 672,374 672,386"/>
+
+  <!-- lane 2 verdict chip -->
+  <rect class="warnbg" x="355" y="438" width="250" height="32" rx="16"/>
+  <text x="480" y="459" font-size="13" font-weight="700" text-anchor="middle" class="warn">DIFFERENT RESIDUES (conflict)</text>
+
+  <!-- legend -->
+  <line class="stB" x1="40" y1="512" x2="74" y2="512"/>
+  <polygon class="hdB" points="84,512 73,506 73,518"/>
+  <text x="94" y="516" font-size="13" class="t2">solid arrow — resolves to a unique observed residue</text>
+  <rect class="auth" x="470" y="502" width="13" height="13" rx="3"/>
+  <text x="491" y="514" font-size="13" class="t2">auth_* — author namespace</text>
+
+  <line class="stW" x1="40" y1="542" x2="84" y2="542" stroke-dasharray="5 4"/>
+  <line class="stW" x1="56" y1="526" x2="66" y2="536"/>
+  <line class="stW" x1="66" y1="526" x2="56" y2="536"/>
+  <text x="94" y="546" font-size="13" class="t2">dashed — the two declarations name different residues</text>
+  <rect class="lbl" x="470" y="532" width="13" height="13" rx="3"/>
+  <text x="491" y="544" font-size="13" class="t2">label_* — label namespace</text>
+
+  <!-- footer -->
+  <text x="36" y="608" font-size="11.5" class="t2">Source: benchmark/data/3b9f.cif excerpt · wwPDB archive, CC0 · original schematic, not a molecular rendering · figure/table claims constructed for the benchmark</text>
+</svg>
