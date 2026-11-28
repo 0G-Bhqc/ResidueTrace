@@ -8,6 +8,7 @@ from tempfile import NamedTemporaryFile
 
 from .audit import AuditError, evaluate
 from .render import render
+from .resolve import add_parser, run as resolve_run
 
 
 def _replace(path, text):
@@ -31,7 +32,10 @@ def main(argv=None):
     demo = verbs.add_parser('demo', help='audit the bundled synthetic teaching example')
     for p in (check, demo):
         p.add_argument('--out', type=Path, required=True, help='destination for report.json and report.html')
+    add_parser(verbs)
     args = parser.parse_args(argv)
+    if args.verb == 'resolve':
+        return resolve_run(args)
     path = args.manifest if args.verb == 'audit' else Path(__file__).with_name('demo') / 'manifest.json'
     try:
         report, png, inputs = evaluate(path)

@@ -23,6 +23,8 @@ python -m residuetrace demo --out out/demo   # equivalent module entry point
 python -m pytest -q                          # core checks and real-archive benchmark
 ```
 
+For scripts and pipelines that resolve individual identifier claims without figures, CSV, or HTML, see [docs/resolve.md](docs/resolve.md): `residuetrace resolve STRUCTURE --sha256 SHA` reads one JSON claim per stdin line and writes one JSON result per line to stdout — exit `0` when every claim is unique, `1` when any line is unresolved, `2` for bad input or a hash mismatch.
+
 The commands replace `report.json` and `report.html` in the chosen directory. Use a fresh destination to avoid confusing older output with a failed run. Exit codes: **0** all links verified, **1** report generated but not wholly verified, **2** unreadable/malformed input or unsuccessful output. Installation may require access to a package index; for offline installation, pre-stage compatible wheels for the project and its dependencies.
 
 ## Input v1
